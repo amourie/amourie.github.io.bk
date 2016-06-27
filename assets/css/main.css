@@ -1,9 +1,17 @@
 
 /*** MAIN LAYOUT ***/
-
+body {
+  font-family: "Open Sans", Arial;
+  font-size: 1.4em;
+  background: #f9f9f9;
+}
+body a {
+  text-decoration: none;
+}
 header {
 	margin: 25px 0px;
 }
+
 footer {
 	text-align: right;
 	font-size: 1em;
@@ -11,6 +19,7 @@ footer {
 	margin: 35px 0px;
 }
 /*** GENERAL TEXT STYLES ***/
+
 h1,h2,h3,h4,h5
 {
 	font-family: 'Fjalla One', sans-serif;
@@ -42,6 +51,9 @@ a {
 a:hover {
 	color: #c0c0c0;
 	text-decoration: none;
+}
+ul {
+  margin-left: 15px;
 }
 /*** PANEL STYLES ***/
 
@@ -75,75 +87,93 @@ a:hover {
 }
 /*** TEAMTREEHOUSE PIE CHART ***/
 
-.group:after {
-	content:"";display:table;clear:both;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #222222;
 }
-
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.team-treehouse h1, .team-treehouse h2 {
+  text-align: center;
+}
+.team-treehouse h2 {
+  font-weight: normal;
+}
+.teamtreehouse-display {
+  margin: 25px 0px 0px 0px;
+}
 .pieChart {
-  width: 12.5em + 13em;
-  margin: 0 auto;
+  width: 25.5em;
+  margin: 35px auto;
   padding-top: 1em;
 }
 .pie {
-  	height: 12.5em;
-  	width: 12.5em;
-	position: relative;
-	float:left;
+  height: 12.5em;
+  width: 12.5em;
+  position: relative;
+  float: left;
 }
-pie::before {
-    content: "";
-    display: block;
-    position: absolute;
-    z-index: 1;
-    width: 12.5em - 2.5em * 2;
-    height: 12.5em - 2.5em * 2;
-    background: #f9f9f9;
-    border-radius: 50%;
-    top: 2.5em;
-    left: 2.5em;
+.pie::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 1;
+  width: 7.5em;
+  height: 7.5em;
+  background: #f9f9f9;
+  border-radius: 50%;
+  top: 2.5em;
+  left: 2.5em;
 }
 .slice {
- 	position: absolute;
-  	width: 12.5em;
-  	height: 12.5em;
-  	clip: rect(0px, 12.5em, 12.5em, 12.5em/2);
+  position: absolute;
+  width: 12.5em;
+  height: 12.5em;
+  clip: rect(0px, 12.5em, 12.5em, 6.25em);
+  animation: bake-pie 1s;
 }
-.slice span {	
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0; 
-    background-color: black;
-    width: 12.5em;
-    height: 12.5em;
-    border-radius: 50%;
-    clip: rect(0px, 12.5em, 12.5em, 12.5em/2); 
-}
-.legend {
-	width: 13em;
-  	padding-left: 1em;
-  	float:left;  
-}
-.legend span {
-	float: right;
-    font-weight: bold;
-}
-.legend ul {
-	list-style-type: none;
-    list-style-position: inside;
-    font-size: 0.8em;
-}
-.legend li {
-	    height: 1.25em;
-    margin-bottom: 0.7em;
-    padding-left: 0.5em;
-    border-left: 1.25em solid black;
-}
-.legend em {
-	    font-style: normal;
+.slice span {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  width: 12.5em;
+  height: 12.5em;
+  border-radius: 50%;
+  clip: rect(0px, 12.5em, 12.5em, 6.25em);
 }
 
+.legend {
+  width: 13em;
+  padding-left: 1em;
+  float: left;
+}
+.legend ul {
+  list-style-type: none;
+  list-style-position: inside;
+  font-size: 0.8em;
+}
+.legend li {
+  height: 1.25em;
+  margin-bottom: 0.7em;
+  padding-left: 0.5em;
+  border-left: 1.25em solid black;
+}
+.legend em {
+  font-style: normal;
+}
+.legend span {
+  float: right;
+  font-weight: bold;
+}
 /*** EQUALIZE COLUMN HEIGHTS ***/
+
 .row-eq-height {
   display: -webkit-box;
   display: -webkit-flex;
