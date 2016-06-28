@@ -1,4 +1,4 @@
-$.ajax('https://'+$('.team-treehouse > span').attr('data')+'.json')
+$.ajax('https://'+$('.team-treehouse > span').attr('data-profile')+'.json')
   .done(function(data) {
  // pull was a success
   var items = [];
